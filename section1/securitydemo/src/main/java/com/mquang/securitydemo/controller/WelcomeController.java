@@ -21,6 +21,9 @@ public class WelcomeController {
 		// the keys spring.security.user.name and spring.security.user.password
 
 		//Spring Security internal flow:
+		//org.springframework.boot.autoconfigure.security.servlet.SpringBootWebSecurityConfiguration
+		//	SecurityFilterChainConfiguration.defaultSecurityFilterChain
+		
 		//1. Spring Security Filters
 		//org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter
 		//org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.generateLoginPageHtml

@@ -20,5 +20,19 @@ public class WelcomeController {
 		// we can configure a custom username/password in application.properties using
 		// the keys spring.security.user.name and spring.security.user.password
 
+		//Spring Security internal flow:
+		//1. Spring Security Filters
+		//org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter
+		//org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.generateLoginPageHtml
+		//org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication
+		//2. AuthenticationManager
+		//org.springframework.security.authentication.ProviderManager(AuthenticationManager).authenticate
+		//3. AuthenticationProvider
+		//org.springframework.security.authentication.dao.DaoAuthenticationProvider.authenticate
+		//org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser
+		//4. UserDetailsManager/UserDetailsService
+		//	getUserDetailsService()
+		//		org.springframework.security.provisioning.InMemoryUserDetailsManager.loadUserByUsername
+		//org.springframework.security.authentication.dao.DaoAuthenticationProvider.additionalAuthenticationChecks
 	}
 }

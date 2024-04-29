@@ -20,6 +20,13 @@ public class LogonController {
 	private PasswordEncoder passwordEncoder; //inject the bean created from ProjectSecurityConfig
 	
 	//for now we can test this end point with Postman/Thunder Client (VS Code)
+	/*
+	 * {
+		  "email": "dungcv1@bidv.com.vn",
+		  "pwd": "12345",
+		  "role": "user"
+		}
+	 */
 	@PostMapping("/register")
 	public ResponseEntity<String> registerUser(@RequestBody Employee employee) {
 		Employee savedEmployee = null;
